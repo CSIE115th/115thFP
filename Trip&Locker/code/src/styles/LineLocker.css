@@ -1,0 +1,711 @@
+/* 重設基本樣式 */
+.line-locker-container {
+  padding: 0;
+  margin: 0;
+  background: var(--secondary-color);
+  min-height: 100vh;
+}
+
+/* 炫酷 Header 設計 */
+.locker-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  padding: 40px 20px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  animation: slideDown 0.5s ease-out;
+}
+
+.header-content p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  opacity: 0.9;
+  animation: fadeIn 0.5s ease-out 0.3s both;
+}
+
+/* 波浪效果 */
+.header-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fff' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  transform: translateY(1px);
+}
+
+/* 表單區域改進 */
+.search-form {
+  background: white;
+  border-radius: 20px;
+  margin: 20px 15px 20px; /* 原本是 -30px，改為20px，讓上方有距離 */
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 3;
+  animation: slideUp 0.5s ease-out;
+}
+
+/* 輸入框美化 */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+  outline: none;
+}
+
+/* 時間選擇器改進 */
+.time-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-group span {
+  min-width: 70px;
+  font-size: 14px;
+}
+
+.time-group select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+}
+
+/* 行李數量控制 */
+.baggage-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.baggage-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counter-controls button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.counter-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 按鈕樣式改進 */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.search-button,
+.reset-button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-button {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.search-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.reset-button {
+  background: var(--secondary-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  background: var(--primary-light);
+  color: white;
+}
+
+/* 錯誤訊息樣式 */
+.error-message {
+  color: #f44336;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* 儲物櫃卡片樣式 */
+.locker-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.locker-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.locker-info {
+  padding: 15px;
+}
+
+.locker-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.rating {
+  color: #ffd700;
+  margin: 5px 0;
+}
+
+.price-info {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.price-info p {
+  margin: 5px 0;
+}
+
+.locker-info a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #2196F3;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* 地區選擇區塊美化 */
+.region-select-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 0 20px 10px 20px;
+  padding: 12px 0 0 0;
+  z-index: 10;
+  position: relative;
+}
+
+.region-select-group label {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.region-select-group select {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-color);
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  transition: border 0.2s;
+  cursor: pointer;
+}
+
+.region-select-group select:focus {
+  border-color: var(--accent-color);
+  background: #f5faff;
+}
+
+/* 台灣地區選擇區塊美化 */
+.tw-area-select-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 20px 0 20px;
+}
+
+.tw-area-select-group label {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 15px;
+}
+
+.tw-area-select-group select {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-color);
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  transition: border 0.2s;
+  cursor: pointer;
+}
+
+/* 台灣儲物櫃列表樣式 */
+.taiwan-locker-list {
+  margin: 20px;
+  background: #f8fafd;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px #0001;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  width: 100%;
+  background: none;
+  text-align: left;
+}
+
+.taiwan-locker-list h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.taiwan-locker-list ul {
+  padding-left: 18px;
+}
+
+.taiwan-locker-list li {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* 區域選擇樣式 */
+.region-segmented-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 28px 0 40px 0; /* 下方間距加大為40px */
+  padding: 0;
+}
+
+.region-segment {
+  flex: 1 1 0;
+  padding: 12px 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: #fff;
+  border: 2px solid var(--primary-color);
+  border-right: none;
+  border-radius: 24px 0 0 24px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+  min-width: 100px;
+}
+
+.region-segment:last-child {
+  border-right: 2px solid var(--primary-color);
+  border-radius: 0 24px 24px 0;
+}
+
+.region-segment.active,
+.region-segment:active,
+.region-segment[aria-pressed="true"] {
+  background: var(--primary-color);
+  color: #fff;
+  z-index: 1;
+}
+
+.region-segment:not(.active):hover {
+  background: #f5faff;
+}
+
+/* 台灣站點樣式 */
+.tw-site-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tw-site-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 16px;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tw-site-item:hover {
+  background: var(--primary-light);
+  color: #fff;
+}
+
+.tw-locker-detail {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.tw-locker-table-wrap {
+  margin-bottom: 18px;
+}
+
+.tw-locker-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+
+.tw-locker-table th,
+.tw-locker-table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.tw-locker-table th {
+  background: var(--primary-light);
+  color: #333;
+}
+
+.tw-locker-update {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.tw-locker-map {
+  margin: 18px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.tw-locker-price-table-wrap {
+  margin: 18px 0;
+}
+
+.tw-locker-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+
+.tw-locker-price-table th,
+.tw-locker-price-table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.tw-locker-price-table th {
+  background: var(--primary-light);
+  color: #333;
+}
+
+.tw-locker-note {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.tw-locker-payment {
+  margin: 12px 0;
+}
+
+.tw-locker-payment ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tw-locker-payment li {
+  background: var(--primary-light);
+  color: #333;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+.tw-locker-back-btn {
+  margin-top: 18px;
+  padding: 8px 20px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tw-locker-back-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* emoji定位按鈕垂直置中微調 */
+.form-group button[aria-label="取得定位"] {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(20%);
+  height: 28px;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0;
+}
+
+/* 動畫效果 */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 深色模式適配 */
+@media (prefers-color-scheme: dark) {
+  .search-form {
+    background: var(--accent-color);
+  }
+
+  .form-group input,
+  .form-group select {
+    background: var(--primary-dark);
+    color: white;
+    border-color: var(--primary-light);
+  }
+
+  .form-group label {
+    color: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .region-select-group {
+    justify-content: center;
+    margin: 0 8px 10px 8px;
+  }
+  .region-select-group label {
+    font-size: 14px;
+  }
+  .region-select-group select {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .region-segmented-group {
+    margin: 18px 0 18px 0;
+  }
+  .region-segment {
+    font-size: 15px;
+    min-width: 80px;
+    padding: 10px 0;
+  }
+}
+
+.toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffefef;
+  color: #d32f2f;
+  padding: 10px 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 9999;
+  font-size: 16px;
+}
+
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-height: 180px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+}
+
+.autocomplete-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.autocomplete-list li:hover {
+  background: #f5f5f5;
+}
+
+/* 地名列表靠左且不置中 */
+.tw-locker-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  width: 100%;
+  background: none;
+  text-align: left;
+}
+
+.locker-site-btn {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1em;
+  padding: 8px 0;
+  color: #222;
+  white-space: normal;
+  word-break: break-all;
+  justify-content: flex-start;
+}
+
+/* 收費標準表格美化 */
+.locker-fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: #fff;
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.locker-fee-table th, .locker-fee-table td {
+  padding: 8px 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.locker-fee-table th {
+  background: #f2f6fa;
+  color: #333;
+  font-weight: 600;
+}
+
+.locker-fee-table tr:last-child td {
+  border-bottom: none;
+}
+
+.locker-fee-table td {
+  color: #222;
+}
+
+.locker-fee-table tr:nth-child(even) td {
+  background: #f9fbfd;
+}
